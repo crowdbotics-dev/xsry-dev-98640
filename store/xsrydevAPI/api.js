@@ -30,6 +30,24 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return xsrydevAPI.post(`/api/v1/signup/`, payload)
 }
+function api_v1_xcdv_list(payload) {
+  return xsrydevAPI.get(`/api/v1/xcdv/`)
+}
+function api_v1_xcdv_create(payload) {
+  return xsrydevAPI.post(`/api/v1/xcdv/`, payload)
+}
+function api_v1_xcdv_retrieve(payload) {
+  return xsrydevAPI.get(`/api/v1/xcdv/${payload.id}/`)
+}
+function api_v1_xcdv_update(payload) {
+  return xsrydevAPI.put(`/api/v1/xcdv/${payload.id}/`, payload)
+}
+function api_v1_xcdv_partial_update(payload) {
+  return xsrydevAPI.patch(`/api/v1/xcdv/${payload.id}/`, payload)
+}
+function api_v1_xcdv_destroy(payload) {
+  return xsrydevAPI.delete(`/api/v1/xcdv/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return xsrydevAPI.post(`/rest-auth/login/`, payload)
 }
@@ -73,6 +91,12 @@ export const apiService = {
   api_v1_cvbr_destroy,
   api_v1_login_create,
   api_v1_signup_create,
+  api_v1_xcdv_list,
+  api_v1_xcdv_create,
+  api_v1_xcdv_retrieve,
+  api_v1_xcdv_update,
+  api_v1_xcdv_partial_update,
+  api_v1_xcdv_destroy,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
