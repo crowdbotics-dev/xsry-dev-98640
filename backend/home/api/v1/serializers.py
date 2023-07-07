@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Cvbr
+from home.models import Cvbr,Xcdv
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -80,4 +80,10 @@ class CvbrSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cvbr
+        fields = "__all__"
+
+class XcdvSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Xcdv
         fields = "__all__"

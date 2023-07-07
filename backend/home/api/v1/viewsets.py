@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Cvbr
-from .serializers import CvbrSerializer
+from home.models import Cvbr,Xcdv
+from .serializers import CvbrSerializer,XcdvSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class CvbrViewSet(viewsets.ModelViewSet):
     serializer_class = CvbrSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Cvbr.objects.all()
+
+class XcdvViewSet(viewsets.ModelViewSet):
+    serializer_class = XcdvSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Xcdv.objects.all()
